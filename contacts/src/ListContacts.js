@@ -2,13 +2,18 @@ import React, {Component} from "react";
 
 class ListContacts extends Component {
     render() {
-        console.log("Props", this.props);
+        let contacts = this.props.contacts;
         return(
             <ol className="contact-list">
-                {this.props.contacts.map((contact) => (
-                    <li key={contact.id}>{contact.name}
-                        {contact.email}
-                        {contact.avatarURL}
+                {contacts.map((contact) => (
+                    <li key={contact.id} className="contact-list-item">
+                        <div className="contact-avatar" style={{ backgroundImage: `url(${contact.avatarURL})` }}/>
+                        <div className="contact-details">
+                            <h1>{contact.name}</h1>
+                            <p>{contact.email}</p>
+                            {contact.avatarURL}
+                        </div>
+                        <button className="contact-remove">Remove</button>
                     </li>
                 ))}
             </ol>
