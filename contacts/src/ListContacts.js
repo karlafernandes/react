@@ -11,7 +11,6 @@ class ListContacts extends Component {
                         <div className="contact-details">
                             <h1>{contact.name}</h1>
                             <p>{contact.email}</p>
-                            {contact.avatarURL}
                         </div>
                         <button className="contact-remove">Remove</button>
                     </li>
